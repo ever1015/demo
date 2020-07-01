@@ -14,6 +14,6 @@ public class DemoController {
 	
 	@GetMapping("/user")
     public String  user (){
-        return "hi  I'am ever";
+        return " hi  I'am ever ";
     }
 }
