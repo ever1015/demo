@@ -8,4 +8,6 @@ public interface DemoService {
 
 	List<Domain> getUsers();
 
+	List<Domain> getUsers_mybatis();
+
 }

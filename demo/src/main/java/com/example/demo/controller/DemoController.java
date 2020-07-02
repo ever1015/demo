@@ -21,4 +21,10 @@ public class DemoController {
     public List<Domain>  user (){
         return service.getUsers();
     }
+	
+	@GetMapping("/getUsers_mybatis")
+    public List<Domain>  getUsers_mybatis (){
+        return service.getUsers_mybatis();
+    }
+	
 }
