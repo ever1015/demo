@@ -27,4 +27,9 @@ public class DemoController {
         return service.getUsers_mybatis();
     }
 	
+	@GetMapping("/getUsers_mybatis2")
+    public List<Domain>  getUsers_mybatis2 (){
+        return service.getUsers_mybatis2();
+    }
+	
 }

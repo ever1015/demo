@@ -27,4 +27,9 @@ public class DemoServiceImpl implements DemoService {
 		return mapper.getUsers_mybatis();
 	}
 
+	@Override
+	public List<Domain> getUsers_mybatis2() {
+		return mapper.getUsers_mybatis2();
+	}
+
 }

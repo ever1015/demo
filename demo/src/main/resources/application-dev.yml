@@ -4,7 +4,7 @@ spring:
     username: root
     password: "root"server:  address: 192.168.0.55
   port: 82
-mybatis:  mapper-locations: classpath:mapping/*Mapper.xml
+mybatis:  mapper-locations: classpath*:mapper/*.xml
   type-aliases-package: com.example.demo.domain
 logging:
   level:

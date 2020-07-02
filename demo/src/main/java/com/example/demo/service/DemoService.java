@@ -10,4 +10,6 @@ public interface DemoService {
 
 	List<Domain> getUsers_mybatis();
 
+	List<Domain> getUsers_mybatis2();
+
 }
