@@ -1,6 +1,5 @@
 var hi = function(){};
 hi.go = function(obj){
-	alert(home_IP())
-//	window.open("https://www.baidu.com")
+	window.open("/page/demo1/demo1.html")
 	
 }
