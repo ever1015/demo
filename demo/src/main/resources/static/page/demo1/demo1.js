@@ -54,4 +54,22 @@ $(function() {
 		error : function(err, status) {
 		}
 	});
+	//mybatis_xml
+	$.ajax({
+		url : home_IP() + '/demo/geredisVal',
+		dataType : 'json',
+		data : {
+//			endYear : $('#endYear').val()
+		},
+		success : function(data, status) {
+			var str = "";
+			for(var i = 0;i < data.length;i++){
+				str += data[i].id + " ==== " + data[i].name + "<br />"
+				
+			}
+			$("#div4").html(str)
+		},
+		error : function(err, status) {
+		}
+	});
 });

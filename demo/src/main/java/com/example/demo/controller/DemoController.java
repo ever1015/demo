@@ -31,5 +31,8 @@ public class DemoController {
     public List<Domain>  getUsers_mybatis2 (){
         return service.getUsers_mybatis2();
     }
-	
+	@GetMapping("/geredisVal")
+    public List<Domain>  geredisVal (){
+        return service.geredisVal();
+    }
 }

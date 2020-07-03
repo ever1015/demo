@@ -12,4 +12,6 @@ public interface DemoService {
 
 	List<Domain> getUsers_mybatis2();
 
+	List<Domain> geredisVal();
+
 }
