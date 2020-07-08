@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.DemoDao;
 import com.example.demo.dao.DemoMapper;
+import com.example.demo.domain.BaseDTO;
 import com.example.demo.domain.Domain;
 import com.example.demo.util.JedisUtil;
+import com.example.demo.util.OSSUtil;
 
 import redis.clients.jedis.Jedis;
 
@@ -22,6 +24,8 @@ public class DemoServiceImpl implements DemoService {
 	private DemoMapper mapper;
 	@Autowired
 	private JedisUtil jedis;
+	@Autowired
+	private OSSUtil oss;
 	
 	@Override
 	public List<Domain> getUsers() {
@@ -57,5 +61,11 @@ public class DemoServiceImpl implements DemoService {
         //查看服务是否运行
         System.out.println("服务正在运行: "+jedis.ping());
         jedis.close();
+	}
+	//需要测试
+	@Override
+	public BaseDTO uploadString(String content) {
+		BaseDTO dto = oss.uploadString(content, "/test", "/test", "femgmox");
+		return dto;
 	}
 }

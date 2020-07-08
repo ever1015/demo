@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.domain.BaseDTO;
 import com.example.demo.domain.Domain;
 import com.example.demo.service.DemoService;
 
@@ -34,5 +35,9 @@ public class DemoController {
 	@GetMapping("/geredisVal")
     public List<Domain>  geredisVal (){
         return service.geredisVal();
+    }
+	@GetMapping("/uploadString")
+    public BaseDTO  uploadString (String content){
+        return service.uploadString(content);
     }
 }
