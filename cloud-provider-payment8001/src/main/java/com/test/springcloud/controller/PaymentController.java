@@ -2,6 +2,7 @@ package com.test.springcloud.controller;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,20 +21,20 @@ public class PaymentController {
 	@Resource
 	private PaymentService paymentService;
 	
-	@PostMapping(value = "/pament/add")
+	@PostMapping(value = "/payment/add")
 	public CommonResult<Payment> add(Payment payment){
 		int result = paymentService.add(payment);
-		log.info("********插入结果********" + result);
+		log.info("********插入结果:" + result);
 		if(result > 0) {
 			return new CommonResult(200, "插入成功",result);
 		}else {
 			return new CommonResult(200, "插入失败",null);
 		}
 	}
-	@GetMapping(value = "/pament/get/{id}")
+	@GetMapping(value = "/payment/get/{id}")
 	public CommonResult<Payment> getPaymentById(@PathVariable("id")Long id){
 		Payment result = paymentService.getPaymentById(id);
-		log.info("********查询结果********" + result);
+		log.info("********查询结果:" + result);
 		if(result != null) {
 			return new CommonResult(200, "查询成功",result);
 		}else {
