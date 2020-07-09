@@ -20,7 +20,7 @@ public class PaymentController {
 	@Resource
 	private PaymentService paymentService;
 	
-	@PostMapping(value = "/pament/add")
+	@PostMapping(value = "/payment/add")
 	public CommonResult<Payment> add(Payment payment){
 		int result = paymentService.add(payment);
 		log.info("********插入结果********" + result);
@@ -30,7 +30,7 @@ public class PaymentController {
 			return new CommonResult(200, "插入失败",null);
 		}
 	}
-	@GetMapping(value = "/pament/get/{id}")
+	@GetMapping(value = "/payment/get/{id}")
 	public CommonResult<Payment> getPaymentById(@PathVariable("id")Long id){
 		Payment result = paymentService.getPaymentById(id);
 		log.info("********查询结果********" + result);
