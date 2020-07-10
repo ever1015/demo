@@ -17,7 +17,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class OrderController {
 
-	public static final String PAYMENT_URL = "http://192.168.0.55:8001";
+//	public static final String PAYMENT_URL = "http://192.168.0.55:8001";
+	public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 	
 	@Resource
 	private RestTemplate restTemplate;
