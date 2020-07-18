@@ -1,8 +1,11 @@
 server:
 #  address: 192.168.0.55
   port: 8001
-spring:  application:    name: cloud-payment-service
-  datasource:    type: com.alibaba.druid.pool.DruidDataSource
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&useSSL=true
     username: root
@@ -16,8 +19,14 @@ eureka:
     fetchRegistry: true
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
-  instance:    instance-id: payment8001
+  instance:
+    instance-id: payment8001
     prefer-ip-address: true #访问路径可以显示ip地址
+    #eureka客户端想服务端发送心跳时间的间隔，单位为秒（默认是30秒）
+#    lease-renewal-interval-in-seconds: 1
+    #eureka服务的再收到最后一次心跳后等待时间上线，单位为秒（默认是90秒），超时将剔除服务
+#    lease-expiration-duration-in-seconds: 2
 
-mybatis:  mapper-locations: classpath:mapper/*.xml
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.test.springcloud.entities
